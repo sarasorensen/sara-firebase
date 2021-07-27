@@ -45,6 +45,7 @@ html {
 }
 
 body {
+  background-color: #f2f4f1;
   position: relative;
   min-height: 100%;
 }
@@ -57,9 +58,13 @@ h1 {
   color: #6c736b;
 }
 h2 {
+  text-transform: uppercase;
   color: #6c736b;
-  font-family: Georgia, sans-serif;
   font-weight: 100;
+}
+hr {
+  width: 30%;
+  color: #6c736b;
 }
 a {
   color: #6c736b;

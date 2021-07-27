@@ -1,10 +1,17 @@
 <template>
   <div>
-    <h1>Home</h1>
-    <base-wrap>
-      <base-card>TEST 1</base-card>
-      <base-card>TEST 2</base-card>
-      <base-card>TEST 3</base-card>
-    </base-wrap>
+    <latest-articles></latest-articles>
+    <about-us></about-us>
   </div>
 </template>
+
+<script>
+import LatestArticles from "./home/LatestArticles.vue";
+import AboutUs from "./home/AboutUs.vue";
+export default {
+  components: {
+    LatestArticles,
+    AboutUs,
+  },
+};
+</script>

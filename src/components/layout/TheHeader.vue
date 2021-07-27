@@ -5,7 +5,7 @@
 
       <ul>
         <li>
-          <router-link to="/plants">Plants</router-link>
+          <router-link to="/products">Products</router-link>
         </li>
         <li>
           <router-link to="/contact">Contact</router-link>

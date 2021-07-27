@@ -3,7 +3,7 @@ import NotFound from "./components/pages/NotFound.vue";
 import InquiryMessage from "./components/pages/InquiryMessage.vue";
 
 const Home = () => import("./components/pages/Home.vue");
-const Plants = () => import("./components/pages/Plants.vue");
+const Products = () => import("./components/pages/Products.vue");
 const Contact = () => import("./components/pages/Contact.vue");
 const UserAuth = () => import("./components/pages/auth/UserAuth.vue");
 const Register = () => import("./components/pages/auth/Register.vue");
@@ -13,7 +13,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", name: "Home", component: Home },
-    { path: "/plants", name: "Plants", component: Plants },
+    { path: "/products", name: "Products", component: Products },
     { path: "/contact", name: "Contact", component: Contact },
     { path: "/auth", name: "UserAuth", component: UserAuth },
     { path: "/register", name: "Register", component: Register },
