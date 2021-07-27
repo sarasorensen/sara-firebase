@@ -1,15 +1,14 @@
 <template>
   <header>
     <nav>
-      <h1>
-        <router-link to="/">Business Name</router-link>
-      </h1>
+      <h1><router-link to="/" class="logo">Logo</router-link></h1>
+
       <ul>
         <li>
-          <router-link to="/plants">All Plants</router-link>
+          <router-link to="/plants">Plants</router-link>
         </li>
         <li>
-          <router-link to="/contactUs">Contact</router-link>
+          <router-link to="/contact">Contact</router-link>
         </li>
         <li v-if="isLoggedIn">
           <router-link to="/dashboard">Dashboard</router-link>
@@ -44,15 +43,15 @@ export default {
 <style scoped>
 header {
   width: 100%;
-  height: 5rem;
-  background-color: #000000;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 header a {
   text-decoration: none;
-  color: #ffffff;
+  text-transform: uppercase;
+  color: #6c736b;
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
@@ -60,21 +59,20 @@ header a {
 a:active,
 a:hover,
 a.router-link-active {
-  border: 1px solid #f391e3;
+  border-bottom: 1px solid #6c736b;
 }
-h1 {
-  color: white;
+.logo {
+  color: #6c736b;
+  font-weight: 900;
+}
+.logo:active,
+.logo:hover,
+.logo.router-link-active {
+  color: #6c736b;
   margin: 0;
+  border-bottom: transparent;
 }
-h1 a {
-  color: white;
-  margin: 0;
-}
-h1 a:hover,
-h1 a:active,
-h1 a.router-link-active {
-  border-color: transparent;
-}
+
 header nav {
   width: 90%;
   margin: auto;

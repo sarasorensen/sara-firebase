@@ -24,11 +24,49 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin: 0 0;
+  padding-bottom: 25em;
+  font-family: Verdana, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+.logo {
+  color: #6c736b;
+  font-weight: 900;
+}
+h1 {
+  color: #6c736b;
+}
+h2 {
+  color: #6c736b;
+  font-family: Georgia, sans-serif;
+  font-weight: 100;
+}
+a {
+  color: #6c736b;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 body {
   width: 100%;
@@ -56,5 +94,10 @@ body {
 .route-leave-from {
   opacity: 1;
   transform: translateY(0);
+}
+@media only screen and (max-width: 950px) {
+  #app {
+    padding-bottom: 55em;
+  }
 }
 </style>

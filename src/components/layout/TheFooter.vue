@@ -1,24 +1,52 @@
 <template>
   <footer>
-    <nav>
+    <div class="column">
       <h1>
-        <router-link to="/">Footer</router-link>
+        <router-link to="/" class="logo-footer">Logo</router-link>
       </h1>
-      <ul>
-        <li>
-          <router-link to="/plants">All Plants</router-link>
-        </li>
-        <li v-if="isLoggedIn">
-          <router-link to="/requests">Requests</router-link>
-        </li>
-        <li v-else>
-          <router-link to="/auth">Login</router-link>
-        </li>
-        <li v-if="isLoggedIn">
-          <base-button @click="logout">Logout</base-button>
-        </li>
-      </ul>
-    </nav>
+    </div>
+    <div class="column">
+      <h3>About Us</h3>
+      <p>We are <span class="logo">Logo</span>, and our passion is plants.</p>
+      <p>
+        We are a women based company, working to give you the absolute best.
+      </p>
+      <p>
+        We strive to give you the most sustainable product possible, and this is
+        ever eveolving.
+      </p>
+    </div>
+    <div class="column">
+      <h3>Contact Us</h3>
+      <p>Company Name</p>
+      <a class="column__a" href="sarasorensen97@hotmail.com"
+        >companyEmail@gmail.com</a
+      >
+      <p>Adress 123 Norway</p>
+    </div>
+
+    <div class="column">
+      <nav>
+        <ul>
+          <h3>Links</h3>
+          <li>
+            <router-link to="/plants">Plants</router-link>
+          </li>
+          <li>
+            <router-link to="/contact">Contact</router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <router-link to="/requests">Requests</router-link>
+          </li>
+          <li v-else>
+            <router-link to="/auth">Login</router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <base-button @click="logout">Logout</base-button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </footer>
 </template>
 
@@ -41,55 +69,70 @@ export default {
 <style scoped>
 footer {
   width: 100%;
-  height: 5rem;
-  background-color: #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
+  background-color: #dfe4de;
+  color: #4a4c49;
+  position: absolute;
   bottom: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
-footer a {
+.logo-footer {
   text-decoration: none;
-  color: #ffffff;
+  text-transform: uppercase;
   display: inline-block;
-  padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
+}
+.column {
+  min-width: 20%;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+  text-align: left;
+  padding: 0;
+}
+.column__a {
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 a:active,
 a:hover,
 a.router-link-active {
-  border: 1px solid #f391e3;
+  border-bottom: 1px solid #6c736b;
+  text-decoration: none;
 }
 h1 {
-  color: white;
+  color: #4a4c49;
   margin: 0;
 }
 h1 a {
-  color: white;
+  color: #4a4c49;
   margin: 0;
 }
 h1 a:hover,
 h1 a:active,
 h1 a.router-link-active {
-  border-color: transparent;
-}
-footer nav {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-bottom: transparent;
 }
 footer ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-li {
-  margin: 0 0.5rem;
+footer li {
+  padding: 0.5em;
+  padding-left: 0;
+}
+@media only screen and (max-width: 950px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .column {
+    width: 100%;
+  }
 }
 </style>

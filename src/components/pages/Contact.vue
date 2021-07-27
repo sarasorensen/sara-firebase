@@ -1,32 +1,21 @@
 <template>
-  <base-wrap>
-    <div class="form-wrap">
-      <form class="form" @submit.prevent="submitForm">
-        <div class="form-control">
-          <label for="email">Name</label>
-          <input type="name" id="name" v-model.trim="name" />
-        </div>
-        <div class="form-control">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" v-model.trim="email" />
-        </div>
-        <div class="form-control">
-          <label for="message">Message</label>
-          <textarea rows="5" id="message" v-model.trim="message"></textarea>
-        </div>
-        <p class="errors" v-if="!formIsValid">
-          Please enter a valid email and non-empty message.
-        </p>
-        <div class="actions">
-          <base-button>Send Message</base-button>
-        </div>
-      </form>
-    </div>
-  </base-wrap>
+  <div>
+    <h1>Contact Us</h1>
+    <p>
+      Do you have any questions? Please don't hesitate to contact us, we are
+      happy to help.
+    </p>
+    <contact-us></contact-us>
+  </div>
 </template>
 
 <script>
+import ContactUs from "./requests/ContactUs.vue";
+
 export default {
+  components: {
+    ContactUs,
+  },
   data() {
     return {
       name: "",
@@ -52,7 +41,7 @@ export default {
         email: this.email,
         message: this.message,
       });
-      this.$router.replace("/inquiryMessage");
+      this.$router.replace("/dashboard");
     },
   },
 };
