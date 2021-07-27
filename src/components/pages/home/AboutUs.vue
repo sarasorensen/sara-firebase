@@ -8,7 +8,7 @@
     </div>
     <div class="column-2">
       <base-textwrap>
-        <h2>About</h2>
+        <h2>About us</h2>
       </base-textwrap>
       <div class="column-2__text">
         <p>
@@ -18,7 +18,7 @@
         </p>
         <p>
           Although we are a women based company for now, we would always love to
-          expand our horizon! Interested in a job? Don't hesitate, contact us
+          become all-inclusive! Interested in a job? Don't hesitate, contact us
           directly by
           <router-link to="/contact" class="logo-footer"
             >clicking here.</router-link
@@ -31,10 +31,7 @@
           big stock of products all the time to ensure that nothing goes to
           waste.
         </p>
-        <p>Stay tuned for plant launches by siging up to our newsletter:</p>
-        <router-link to="/contact" class="logo-footer"
-          >Sign Up Fix me</router-link
-        >
+
         <h3>- The plant Team</h3>
       </div>
     </div>

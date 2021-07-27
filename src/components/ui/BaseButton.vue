@@ -13,20 +13,20 @@ export default {
     mode: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     link: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     to: {
       type: String,
       required: false,
-      default: '/'
-    }
-  }
-}
+      default: "/",
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -35,39 +35,41 @@ a {
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   font: inherit;
-  background-color: #3a0061;
-  border: 1px solid #3a0061;
-  color: white;
+  background-color: transparent;
+  border: 1px solid #6c736b;
+  color: #6c736b;
   cursor: pointer;
-  border-radius: 30px;
   margin-right: 0.5rem;
   display: inline-block;
+  transition: all 0.5s ease;
 }
 
 a:hover,
 a:active,
 button:hover,
 button:active {
-  background-color: #270041;
-  border-color: #270041;
+  background-color: #6c736b;
+  color: #fbfbfb;
+  -webkit-transition: 0.5s linear;
+  -ms-transition: 0.5s linear;
+  transition: 0.5s linear;
 }
 
 .flat {
-  background-color: transparent;
-  color: #3a0061;
-  border: none;
+  background-color: #6c736b;
+  color: #fbfbfb;
 }
 
 .outline {
-  background-color: transparent;
-  border-color: #270041;
-  color: #270041;
+  background-color: #6c736b;
+  color: #fbfbfb;
 }
 
 .flat:hover,
 .flat:active,
 .outline:hover,
 .outline:active {
-  background-color: #edd2ff;
+  background-color: #6c736b;
+  color: #fbfbfb;
 }
 </style>

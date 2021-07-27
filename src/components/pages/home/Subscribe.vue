@@ -1,37 +1,29 @@
 <template>
-  <base-wrap>
+  <div class="subscripe-wrap">
     <div class="form-wrap">
+      <h3 class="big">Subscribe,</h3>
+      <h3>& never miss a launch!</h3>
       <form class="form" @submit.prevent="submitForm">
-        <div class="form-control">
-          <label for="email">Name</label>
-          <input type="name" id="name" v-model.trim="name" />
-        </div>
         <div class="form-control">
           <label for="email">E-Mail</label>
           <input type="email" id="email" v-model.trim="email" />
         </div>
-        <div class="form-control">
-          <label for="message">Message</label>
-          <textarea rows="5" id="message" v-model.trim="message"></textarea>
-        </div>
         <p class="errors" v-if="!formIsValid">
-          Please enter a valid email and non-empty message.
+          Please enter a valid email.
         </p>
         <div class="actions">
-          <base-button>Send Message</base-button>
+          <base-button>Subscribe</base-button>
         </div>
       </form>
     </div>
-  </base-wrap>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      name: "",
       email: "",
-      message: "",
       formIsValid: true,
     };
   },
@@ -48,9 +40,7 @@ export default {
         return;
       }
       this.$store.dispatch("requests/contactUs", {
-        name: this.name,
         email: this.email,
-        message: this.message,
       });
       this.$router.replace("/inquiryMessage");
     },
@@ -59,6 +49,11 @@ export default {
 </script>
 
 <style scoped>
+.subscripe-wrap {
+  background-color: #dfe4de;
+  padding-top: 3.5em;
+  padding-bottom: 6.5em;
+}
 form {
   width: 50%;
   margin: 0 auto;

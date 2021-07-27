@@ -25,7 +25,7 @@ export default {
 <style>
 #app {
   margin: 0 0;
-  padding-bottom: 25em;
+  padding-bottom: 12em;
   font-family: Verdana, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -61,6 +61,13 @@ h2 {
   text-transform: uppercase;
   color: #6c736b;
   font-weight: 100;
+}
+h3 {
+  font-family: "Times New Roman", Times, serif;
+  color: #6c736b;
+}
+.big {
+  text-transform: uppercase;
 }
 hr {
   width: 30%;

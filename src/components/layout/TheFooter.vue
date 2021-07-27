@@ -6,7 +6,7 @@
       </h1>
     </div>
     <div class="column">
-      <h3>About Us</h3>
+      <h4>About Us</h4>
       <p>We are <span class="logo">Logo</span>, and our passion is plants.</p>
       <p>
         We are a women based company, working to give you the absolute best.
@@ -17,7 +17,7 @@
       </p>
     </div>
     <div class="column">
-      <h3>Contact Us</h3>
+      <h4>Contact Us</h4>
       <p>Company Name</p>
       <a class="column__a" href="sarasorensen97@hotmail.com"
         >companyEmail@gmail.com</a
@@ -28,7 +28,7 @@
     <div class="column">
       <nav>
         <ul>
-          <h3>Links</h3>
+          <h4>Links</h4>
           <li>
             <router-link to="/plants">Plants</router-link>
           </li>
@@ -69,7 +69,7 @@ export default {
 <style scoped>
 footer {
   width: 100%;
-  background-color: #dfe4de;
+  background-color: #fbfbfb;
   color: #4a4c49;
   position: absolute;
   bottom: 0;
