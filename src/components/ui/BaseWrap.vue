@@ -6,6 +6,8 @@
 
 <style scoped>
 .wrap {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

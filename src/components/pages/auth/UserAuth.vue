@@ -6,7 +6,7 @@
     <base-dialog :show="isLoading" title="Authenticating..." fixed>
       <base-spinner></base-spinner>
     </base-dialog>
-    <base-card>
+    <div class="form-wrap">
       <form @submit.prevent="submitForm">
         <div class="form-control">
           <label for="email">E-Mail</label>
@@ -25,7 +25,7 @@
           switchModeButtonCaption
         }}</base-button>
       </form>
-    </base-card>
+    </div>
   </div>
 </template>
 
@@ -101,15 +101,34 @@ export default {
 </script>
 
 <style scoped>
+.form-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.5em;
+  margin-bottom: 3.5em;
+}
+.column {
+  width: 50%;
+  padding: 1em;
+  background-color: #fbfbfb;
+}
+.column__text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
 form {
-  margin: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fbfbfb;
   padding: 1rem;
+  text-align: left;
 }
 .form-control {
   margin: 0.5rem 0;
 }
 label {
-  font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -123,8 +142,14 @@ textarea {
 }
 input:focus,
 textarea:focus {
-  border-color: #3d008d;
+  border-color: #6c736b;
   background-color: #faf6ff;
   outline: none;
+}
+.errors {
+  color: red;
+}
+.actions {
+  text-align: center;
 }
 </style>

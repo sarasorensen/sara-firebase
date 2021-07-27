@@ -38,13 +38,13 @@ export default {
       default: false,
     },
   },
-  emits: ['close'],
+  emits: ["close"],
   methods: {
     tryClose() {
       if (this.fixed) {
         return;
       }
-      this.$emit('close');
+      this.$emit("close");
     },
   },
 };
@@ -77,7 +77,7 @@ dialog {
 }
 
 header {
-  background-color: #3a0061;
+  background-color: #6c736b;
   color: white;
   width: 100%;
   padding: 1rem;

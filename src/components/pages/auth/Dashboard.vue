@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-wrapper">
+  <div>
     <base-card v-if="!isLoggedIn">
       <h2>Dashboard</h2>
       <p>
@@ -9,39 +9,46 @@
       <router-link to="/auth">Log in here</router-link>
     </base-card>
     <section v-else>
-      <div class="dashboard-wrapper">
-        <base-dialog
-          :show="!!error"
-          title="An error occurred!"
-          @close="handleError"
-        >
-          <p>{{ error }}</p>
-        </base-dialog>
+      <base-dialog
+        :show="!!error"
+        title="An error occurred!"
+        @close="handleError"
+      >
+        <p>{{ error }}</p>
+      </base-dialog>
+      <section>
         <base-spinner v-if="isLoading"></base-spinner>
-        <section>
-          <base-card>
+
+        <div
+          class="dash-wrap"
+          v-else-if="hasRequests && !isLoading && isLoggedIn"
+        >
+          <div class="column" v-if="hasUserDash">
+            <h2>Dashboard</h2>
+            <p>You are logged in as:</p>
+          </div>
+
+          <div class="column-2">
             <header>
-              <h2>Requests Received</h2>
+              <h3>Requests Received</h3>
             </header>
-            <base-spinner v-if="isLoading"></base-spinner>
-            <ul v-else-if="hasRequests && !isLoading && isLoggedIn">
-              <request-item
-                v-for="req in receivedRequests"
-                :key="req.id"
-                :email="req.userEmail"
-                :message="req.message"
-              ></request-item>
-            </ul>
-            <h3 v-else>You haven't received any requests yet!</h3>
-          </base-card>
-        </section>
-      </div>
+            <request-item
+              v-for="req in receivedRequests"
+              :key="req.id"
+              :email="req.userEmail"
+              :message="req.message"
+            ></request-item>
+          </div>
+        </div>
+        <h3 v-else>You haven't received any requests yet!</h3>
+      </section>
     </section>
   </div>
 </template>
 
 <script>
 import RequestItem from "../../requests/RequestItem.vue";
+
 export default {
   components: {
     RequestItem,
@@ -53,7 +60,12 @@ export default {
     };
   },
   computed: {
+    hasUserDash() {
+      console.log(this.$store.getters.userDash);
+      return this.$store.getters.userDash;
+    },
     isLoggedIn() {
+      console.log(this.$store.getters.token);
       return this.$store.getters.isAuthenticated;
     },
     receivedRequests() {
@@ -84,10 +96,31 @@ export default {
 </script>
 
 <style scoped>
-.dashboard-wrapper {
-  position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.dash-wrap {
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  width: 45%;
+  background-color: #fbfbfb;
+}
+.column-2 {
+  width: 55%;
+  background-color: #fbfbfb;
+  justify-content: center;
+  margin: 0;
+}
+@media only screen and (min-width: 700px) and (max-width: 950px) {
+  .dash-wrap {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+  .dash-wrap {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 </style>

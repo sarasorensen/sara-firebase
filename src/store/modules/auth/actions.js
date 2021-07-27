@@ -33,6 +33,9 @@ export default {
 
     const responseData = await response.json();
 
+    const userDash = responseData.email;
+    localStorage.setItem("userDash", userDash);
+
     if (!response.ok) {
       const error = new Error(
         responseData.message || "Failed to authenticate. Check your login data."
@@ -41,7 +44,6 @@ export default {
     }
 
     const expiresIn = +responseData.expiresIn * 1000;
-    // const expiresIn = 5000;
     const expirationDate = new Date().getTime() + expiresIn;
 
     localStorage.setItem("token", responseData.idToken);
@@ -53,11 +55,13 @@ export default {
     }, expiresIn);
 
     context.commit("setUser", {
+      userDash: responseData.email,
       token: responseData.idToken,
       userId: responseData.localId,
     });
   },
   tryLogin(context) {
+    const userDash = localStorage.getItem("userDash");
     const token = localStorage.getItem("token");
     const userId = localStorage.getItem("userId");
     const tokenExpiration = localStorage.getItem("tokenExpiration");
@@ -72,14 +76,16 @@ export default {
       context.dispatch("autoLogout");
     }, expiresIn);
 
-    if (token && userId) {
+    if (token && userId && userDash) {
       context.commit("setUser", {
+        userDash: userDash,
         token: token,
         userId: userId,
       });
     }
   },
   logout(context) {
+    localStorage.removeItem("userDash");
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     localStorage.removeItem("tokenExpiration");
@@ -87,6 +93,7 @@ export default {
     clearTimeout(timer);
 
     context.commit("setUser", {
+      userDash: null,
       token: null,
       userId: null,
     });

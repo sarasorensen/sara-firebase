@@ -1,6 +1,28 @@
 <template>
   <base-wrap>
     <div class="form-wrap">
+      <div class="column">
+        <h2>Contact Us</h2>
+        <div class="column__text">
+          <p>
+            Do you have any questions? Please don't hesitate to contact us,
+            we're happy to help. You can email us directly at
+            <a class="column__a" href="sarasorensen97@hotmail.com"
+              >companyEmail@gmail.com</a
+            >, or use the form.
+          </p>
+          <p>
+            If you have any questions about your order, don't forget to include
+            your order number.
+          </p>
+          <p>
+            <span class="light">
+              Contact hours are between 9AM - 5PM Monday to Friday. Respond time
+              may vary.
+            </span>
+          </p>
+        </div>
+      </div>
       <form class="form" @submit.prevent="submitForm">
         <div class="form-control">
           <label for="email">Name</label>
@@ -15,7 +37,10 @@
           <textarea rows="5" id="message" v-model.trim="message"></textarea>
         </div>
         <p class="errors" v-if="!formIsValid">
-          Please enter a valid email and non-empty message.
+          Please check your input.
+        </p>
+        <p class="errors" v-if="!formIsValid">
+          There has to be a name, a valid email and non-empty message.
         </p>
         <div class="actions">
           <base-button>Send Message</base-button>
@@ -59,11 +84,27 @@ export default {
 </script>
 
 <style scoped>
+.form-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.5em;
+  margin-bottom: 3.5em;
+}
+.column {
+  width: 50%;
+  padding: 1em;
+  background-color: #fbfbfb;
+}
+.column__text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
 form {
   width: 50%;
   margin: 0 auto;
   background-color: #fbfbfb;
-  border: 1px solid #ccc;
   padding: 1rem;
   text-align: left;
 }

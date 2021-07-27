@@ -6,19 +6,19 @@
 
 <script>
 export default {
-  props: ['type', 'title'],
+  props: ["type", "title"],
   computed: {
     text() {
       return this.title.toUpperCase();
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
 .badge {
   background-color: #ccc;
-  color: #252525;
+  color: #6c736b;
   border-radius: 30px;
   padding: 0.5rem 1.5rem;
   display: inline-block;
@@ -26,17 +26,17 @@ export default {
 }
 
 .frontend {
-  background-color: #3d008d;
+  background-color: #6c736b;
   color: white;
 }
 
 .backend {
-  background-color: #71008d;
+  background-color: #6c736b;
   color: white;
 }
 
 .career {
-  background-color: #8d006e;
+  background-color: #6c736b;
   color: white;
 }
 </style>

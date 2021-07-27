@@ -32,24 +32,20 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 html {
   height: 100%;
   box-sizing: border-box;
 }
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
-
 body {
   background-color: #f2f4f1;
   position: relative;
   min-height: 100%;
 }
-
 .logo {
   color: #6c736b;
   font-weight: 900;
@@ -63,11 +59,13 @@ h2 {
   font-weight: 100;
 }
 h3 {
-  font-family: "Times New Roman", Times, serif;
   color: #6c736b;
 }
 .big {
   text-transform: uppercase;
+}
+.light {
+  opacity: 0.7;
 }
 hr {
   width: 30%;
